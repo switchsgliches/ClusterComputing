@@ -1,23 +1,26 @@
 #pragma once
+#include "Processor.h"
+#include "Power.h"
+#include "RAM.h"
+#include "Storage.h"
 
-
-template <class T>
-class Node
+class Node : public Processor , public Power, public RAM, public Storage
 {
-	friend class Processor;
-public:
-	Node();
-	Node(int v);
-	Node(int v, Node* next);
-	~Node();
-
-	int getValue();
-	Node* getNext();
-
 private:
-	int value;
-	Node *pNext;
+	Processor proc;
+	RAM mem;
+	Power pow;
+	Storage store;
+
+public:
+	Node() {	};
+	Node(Processor pr, RAM r, Power po, Storage stor)
+	{
+		proc = pr;
+		mem = r;
+		pow = po;
+		store = stor;
+	}
+	std::string getData();
 	
 };
-
-

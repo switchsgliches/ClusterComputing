@@ -1,39 +1,13 @@
 #include "Node.h"
-#include  <iostream>
-#include <string.h>
 
-using namespace std;
-
-template<class T>
-inline Node<T>::Node()
+std::string Node::getData()
 {
+	std::string outString = " ";
+
+	outString += "Node Data\n Processor Data:\n" + this->getData()
+		+"RAM Data: " + std::to_string(this->getSize()) 
+		+ "\nPower Data: " + std::to_string(this->getPower()) 
+		+ "\nStorage Data: " + std::to_string(this->getStorage()) + "\n";
+
+	return outString;
 }
-
-template<class T>
-Node<T>::Node(int v)
-{
-}
-
-template<class T>
-Node<T>::Node(int v, Node * next)
-{
-}
-
-template<class T>
-Node<T>::~Node()
-{	
-}
-
-template<class T>
-int Node<T>::getValue()
-{
-	return value;
-}
-
-template<class T>
-Node * Node<T>::getNext()
-{
-	return pNext;
-}
-
-

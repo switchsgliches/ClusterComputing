@@ -1,19 +1,13 @@
 #pragma once
-#include <iostream>
-#include <string>
 
 class Storage
 {
 private:
 	double storage;
 public:
-	Storage();
-	Storage(double s);
-	~Storage();
-	void setSize(double s);
-	double getSize() { return storage; };
-
-};
-
-
+	Storage() { storage = 0.0; };
+	Storage(double s) { storage = s; };
+	void setStorage(double s) { storage = s; };
+	double getStorage() { return storage; };
+}; 
 
